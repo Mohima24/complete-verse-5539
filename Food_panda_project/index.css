@@ -1,0 +1,408 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.topnav{
+    text-align: center;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+.topnav>a>img{
+    width: 5%;
+    height: 80%;
+}
+/* -----------------------------Top Nav Bar en----------------------------- */
+.botNav{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+    z-index: 2;
+    background-color: white;
+}
+#logo{
+    width: 10%;
+    height: 12vh;
+}
+#logo>img{
+    padding-left:10%;
+    width: 100%;
+    height: 100%;
+}
+.botNav>ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.botNav>ul>li{
+    padding: 10px;
+}
+.botNav>ul:last-child{
+    margin-right: 2%;
+}
+.botNav>ul>li>a:hover{
+    color: #217257;
+}
+.botNav>ul:last-child{
+   
+}
+#signUp>a{
+    color: white;
+    background-color: #1aa176;
+}
+
+/* ---------------------- Bottom Nav Bar ------------------- */
+.bannerS{
+    display: flex;
+    overflow: hidden;
+}
+#bannerimg{
+    width: 80%;
+    position: relative;
+}
+#bannerimg>h2{
+    position: absolute;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.904);
+    top: 12%;
+    right: 0px;
+    font-weight: 700;
+    font-size: 2rem;
+    font-family:'Favoritfreshly',sans-serif;
+    padding:0% 5%;
+}
+#bannerimg>img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.form_grid{
+    display: flex;
+}
+.maildiv{
+    width: 80%;
+}
+input[type="email"],
+input[type="number"]{
+    width: 90%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: none;
+}
+#textpart{
+    width: 55%;
+    background-color: #85e5c6;
+    padding-bottom: 3%;
+}
+
+#textpart>div>h1{
+    font-weight: 700;
+    color: black;
+    font-size: 4rem;
+    text-align: left;
+    font-family:'Favoritfreshly',sans-serif;
+    padding:0% 3%;
+    padding-bottom: 3%;
+}
+#textpart>div>button{
+    margin: 0% 10%;
+    padding: 9px 20px;
+    border: 2px solid #217257;
+    margin-bottom: 5%;
+}
+#textpart>div>h2{
+    font-family:'Favoritfreshly',sans-serif;
+    margin: 0% 10%;
+    margin-bottom: 3%;
+}
+label{
+    font-weight: bold;
+    font-family:'Favoritfreshly',sans-serif;
+}
+input{
+    margin: 3% 0%;
+}
+input[type="submit"]{
+    width: 32%;
+    padding: 8px;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+}
+form,form~p{
+    margin: 0% 10%;
+    font-weight: 500;
+}
+form~p>a{
+    color: white;
+    text-decoration: underline;
+}
+/* ---------------------Top Mid Section-------------------- */
+#textpart>div>h1{
+    text-align: center;
+    /* margin-top: 2%; */
+}
+.topMidSection>div{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top:4%;
+    text-align: center;
+}
+.topMidSection>div>div{
+    width: 20%;
+}
+.topMidSection>div>div>img{
+    height: 60%;
+    margin-bottom: 8%;
+}
+.topMidSection>div>div>h2{
+    margin-bottom: 1%;
+}
+/* -------------------------Top mid section end-------------------------- */
+.midMidSection{
+    width: 65%;
+    margin: 5% auto;
+    background-color: white;
+    text-align: center;
+    margin-bottom: 5%;
+}
+.backgoundImg{
+    width: 100%;
+    overflow: hidden;
+    background-image: url("https://assets-global.website-files.com/5d03b4e130118314af624b20/61f127577dd58a9659fa4545_22_Homepage_OntheMenu_BG_1440%20x%20890.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#menuImages{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    text-align: left;
+}
+#menuImages>div{
+    width:30%;
+    cursor: pointer;
+}
+#menuImages>div>div{
+    width: 100%;
+    height:60%;
+    margin:20% 0%;
+    margin-bottom: 16px;
+    border-radius: 20px;
+    overflow: hidden;
+    /* border: 1px solid black; */
+}
+#menuImages>div>div>img{
+    width: 100%;
+    height:100%;
+    transition: 2s;
+}
+#menuImages>div:hover img{
+    transform:scale(1.1);
+}
+#menuImages>div>p{
+    display: inline;
+    padding-right:10px;
+}
+#menuImages>div>p:nth-child(4),
+#menuImages>div>p:nth-child(5){
+    padding-left:10px;
+    border-left:2px solid #1aa176;
+}
+.midMidSection>button{
+    width:90%;
+    padding:10px;
+    color: white;
+    background-color: #1aa176;
+    border: none;
+    font-family:'Favoritfreshly',sans-serif;
+    font-size: 20px;
+    margin-bottom: 4%;
+    margin-top: 10%;
+}
+.midMidSection>h1{
+    padding: 0% 5%;
+    font-size: 3rem;
+    font-family:'Favoritfreshly',sans-serif;
+    text-align: left;
+    padding-top: 6%;
+}
+#menuImages>div>h3{
+    margin-bottom: 5px;
+}
+/* -------------------------plan section--------------------------------- */
+.plansection{
+    margin-top: 3%;
+    text-align: center;
+}
+#planTable{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: left;
+    color: #217257;
+}
+#planTable>div{
+    width: 18%;
+    overflow: hidden;
+    margin: 5% 0%;
+    cursor: pointer;
+}
+#planTable>div>img{
+    width: 100%;
+    border-radius: 25px;
+}
+.plansection>h1,.plansection>p{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1%;
+}
+.plansection>button{
+    padding:10px;
+    color: white;
+    font-family:'Favoritfreshly',sans-serif;
+    font-size: 20px; 
+    /* /* /* margin-bottom: 4%; */
+    margin-top: 2%;
+    background-color:#1aa176;
+    border: none; 
+}
+/* --------------------------icons ------------------------------ */
+.review>h1{
+    text-align: center;
+    font-size: 3rem;
+    font-family:'Favoritfreshly',sans-serif;
+    margin-top: 8%;
+}
+#iconsDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+#iconsDiv>div{
+    width: 25%;
+    margin-top: 3%;
+}
+#icons{
+    color: #FDCC0D;
+}
+#iconsDiv>div>h6{
+    font-size: 22px;
+    font-weight: normal;
+    margin: 10px;
+}
+#iconsDiv>div>p{
+    font-size: 14px;
+}
+/* -----------------info---------------- */
+
+#information{
+    width: 95%;
+    margin:8% auto;
+    position: relative;
+    text-align: right;
+}
+#information>div{
+    width: 55%;
+    position: absolute;
+    background-color: white;
+    top: 25%;
+    left:0%;
+    padding-right: 4%;
+    text-align: left;
+}
+#information>div>h1{
+    font-size: 2.678rem;
+    padding-right: 3%;
+    font-family:'Favoritfreshly',sans-serif;
+    margin-top: 6%;
+}
+#information>div>p{
+    margin-top: 2%;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+#information>div>button{
+    background-color: #1aa176;
+    border: none;
+    padding: 13px 20px;
+    margin: 5% 0%;
+    color: white;
+    font-size: 1rem;
+}
+#loginSection{
+    width: 95%;
+    margin:8% auto;
+    position: relative;
+    text-align: left;
+}
+#loginSection>div{
+    width: 55%;
+    margin: auto;
+    position: absolute;
+    background-color: white;
+    top: 20%;
+    right: 5%;
+    padding-left: 4%;
+    text-align: left;
+    padding-bottom: 5%;
+}
+#loginSection>div>h1{
+    font-size: 2.678rem;
+    padding-right: 3%;
+    font-family:'Favoritfreshly',sans-serif;
+    margin-top: 6%;
+}
+#loginSection>div>p{
+    margin-top: 2%;
+    line-height: 1.5;
+    font-size: 1rem;
+    display: inline;
+}
+#loginSection>div>form>
+input[type="email"],
+#loginSection>div>form>
+input[type="number"]{
+    width: 80%;
+    padding: 8px;
+    font-size: 20px;
+    text-align: left;
+    border: 1px solid black; 
+}
+#loginSection>div>form,#loginSection>div>form~p{
+    width: 100%;
+    margin: 0px;
+}
+#loginSection>div>form~p>a{
+    color: black;
+}
+.topfooter{
+    height:30vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(228, 219, 219);
+}
+.topfooter>a>img{
+width: 100%;
+}
