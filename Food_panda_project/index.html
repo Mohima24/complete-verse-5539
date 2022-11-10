@@ -16,14 +16,14 @@
         </div>
         <div class="botNav">
             <div id="logo">
-                <img src="./logo/FoodPanda.jpg" alt="logo">
+                <a href="index.html"><img src="./logo/FoodPanda.jpg" alt="logo"></a>
             </div> 
             <ul>
-                <li><a href="">Plan & Menu</a></li>
-                <li><a href="">How it Works</a></li>
-                <li><a href="">Gifts</a></li>
-                <li><a href="">Refer a Freind</a></li>
-                <li><a href="">Help</a></li>
+                <li><a href="plan.html">Plan & Menu</a></li>
+                <li><a href="#">How it Works</a></li>
+                <li><a href="#">Gifts</a></li>
+                <li><a href="#">Refer a Freind</a></li>
+                <li><a href="#">Help</a></li>
             </ul>
             <ul>
                 <li id="login"><a href="#">Login</a></li>
@@ -41,17 +41,17 @@
                     <h1>
                         Balanced meals for busy lives
                     </h1>
-                    <button>Explore Meals</button>
+                    <a href="#scrolldown" id="scroll"><button id="explore">Explore Meals</button></a>
                     <h2>See meals available in your area!</h2>
                     <form>
                         <div class="form_grid">
                             <div class="maildiv">
                                 <label>Email Address</label>
-                                <input type="email" placeholder="foodpanda@gmail.com">
+                                <input type="email" placeholder="foodpanda@gmail.com" id="email" required>
                             </div>
                             <div>
                                 <label>Zip Code</label>
-                                <input type="number" placeholder="111111">
+                                <input type="number" placeholder="111111" maxlength="5" id="zip" required>
                             </div>
                         </div>
                         <input type="submit" value="Get Started">
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-    <div class="topMidSection">
+    <div class="topMidSection" >
         <h1>
             How it works
         </h1>
@@ -89,7 +89,7 @@
             </div>
         </div>
     </div>
-    <div class="backgoundImg">
+    <div class="backgoundImg"  id="scrolldown">
         <div class="midMidSection">
             <h1>On The Menu</h1>
             <div id="menuImages">
@@ -99,9 +99,9 @@
         </div>
     </div>
     <div class="plansection">
-        <img src="" alt="">
+        <img src="./logo/Food_panda.png" alt="">
         <h1>Flexible plans that fit your life</h1>
-        <p>We offer anywhere from 4-12 meals per week, with meals as low as $9.58 each. The bigger your box, the more you’ll save—and you can always pause or change your plan at any time.</p>
+        <p>We offer anywhere from 4-12 meals per week, with meals as low as $9.58 each. The bigger your box, the more you'll save—and you can always pause or change your plan at any time.</p>
         <div id="planTable">
             <div>
                 <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66b89f0dd67c2bb6ae51_635823f4ce49292c9d1f97cc_production-meal-image-cad55a0d-ac7c-4907-aa5e-6f29775c6b87.jpeg" alt="">
@@ -127,47 +127,99 @@
         <p>Shipping and tax added at checkout. Prices are rounded for your convenience.</p>
         <button>Sign Up Now</button>
     </div>
+
     <div class="review">
-        <h1>What Others Are Saying</h1>
-        <div id="iconsDiv">
-            <div>
-                <div id="icons">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <h6>Freshly has changed our lives!</h6>
-                <p>With Freshly, we don't have to go anywhere or wait for delivery, and our monthly food bill has been cut nearly in half. We love it.</p>
-                <span>Dave</span>
+        <h2 class="revie-categor">What Others Are Saying</h2>
+        <!-- <button class="pre-btn"><img src="./logo/arrow.png" alt=""></button>
+        <button class="next-btn"><img src="./logo/arrow.png" alt=""></button> -->
+        <div class="review-container">
+           <div class="content">
+            <div class="icons">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
             </div>
-            <div>
-                <div id="icons">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
+            <div class="review-comments">
                 <h6>Freshly has changed our lives!</h6>
                 <p>With Freshly, we don't have to go anywhere or wait for delivery, and our monthly food bill has been cut nearly in half. We love it.</p>
                 <span>Cindi</span>
             </div>
-            <div>
-                <div id="icons">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
+           </div>
+           <div class="content">
+            <div class="icons">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="review-comments">
                 <h6>Freshly has changed our lives!</h6>
                 <p>With Freshly, we don't have to go anywhere or wait for delivery, and our monthly food bill has been cut nearly in half. We love it.</p>
-                <span>Sheri</span>
+                <span>Cindi</span>
             </div>
+           </div>
+           <div class="content">
+            <div class="icons">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="review-comments">
+                <h6>Freshly has changed our lives!</h6>
+                <p>With Freshly, we don't have to go anywhere or wait for delivery, and our monthly food bill has been cut nearly in half. We love it.</p>
+                <span>Cindi</span>
+            </div>
+           </div>
+           <div class="content">
+            <div class="icons">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="review-comments">
+                <h6>Freshly has changed our lives!</h6>
+                <p>With Freshly, we don't have to go anywhere or wait for delivery, and our monthly food bill has been cut nearly in half. We love it.</p>
+                <span>Cindi</span>
+            </div>
+           </div>
+           <div class="content">
+            <div class="icons">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="review-comments">
+                <h6>Freshly has changed our lives!</h6>
+                <p>With Freshly, we don't have to go anywhere or wait for delivery, and our monthly food bill has been cut nearly in half. We love it.</p>
+                <span>Cindi</span>
+            </div>
+           </div>
+           <div class="content">
+            <div class="icons">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="review-comments">
+                <h6>Freshly has changed our lives!</h6>
+                <p>With Freshly, we don't have to go anywhere or wait for delivery, and our monthly food bill has been cut nearly in half. We love it.</p>
+                <span>Cindi</span>
+            </div>
+           </div>
         </div>
     </div>
+
     <div id="information">
         <img width="70%" src="https://assets-global.website-files.com/5d03b4e130118314af624b20/61f1275059fd961964f53287_22_Homepage_EatingBetterEasy_BG_866x708.jpg" alt="">
         <div>
@@ -206,6 +258,42 @@
             <a href="#">
                 <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f523e432759db28ffaf924f_w-g-logo-black.svg" alt="">
             </a>
+        </div>
+        <div class="footerbtm">
+            <a href="index.html"><img src="./logo/FoodPanda.jpg" alt=""></a>
+            <div>
+                <p>Company</p>
+                <ul>
+                    <li> 
+                       <a href=""> Careers</a> </li>
+                    <li> <a href=""> Contact  </a></li>
+                    <li> <a href=""> Press </a></li>
+                    <li> <a href=""> Terms </a></li>
+                    <li> <a href=""> Privacy </a></li>
+                    <li><a href=""> Affiliates </a></li>
+                    <li> <a href=""> Partnerships</a></li>
+                </ul>
+            </div>
+            <div>
+                <p>Learn More</p>
+                <ul>
+                    <li><a href="">Plans & Menu</a></li>
+                    <li><a href="">Why Freshly?</a></li>
+                    <li><a href="">Gifts</a></li>
+                    <li><a href="">FAQs</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Students</a></li>
+                </ul>
+            </div>
+            <div>
+                <p>Join Us</p>
+                <a href="facebook.com"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="Instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href=""><i class="fa-brands fa-pinterest"></i></a>
+            </div>
         </div>
     </footer>
 </body>
