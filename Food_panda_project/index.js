@@ -59,3 +59,23 @@ function displayDiv(data) {
         div.append(imgDiv, name, cal, text, serve)
     }
 }
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
+    anchor.addEventListener('click',function(e){
+        e.preventDefault()
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior:"smooth"
+        })
+    })
+})
+
+document.querySelector('form').addEventListener('submit',function(event){
+event.preventDefault()
+window.location.replace()
+})
+document.querySelectorAll('input[type="number"]').forEach(input=>{
+    input.oninput = ()=> {
+        if(input.value.length>input.maxLength) input.value = input.value.slice(0,input.maxLength);
+    }
+})
+

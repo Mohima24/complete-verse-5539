@@ -10,6 +10,7 @@ a{
     text-decoration: none;
     color: black;
     padding: 5px;
+    cursor: pointer;
 }
 .topnav>a>img{
     width: 5%;
@@ -32,7 +33,7 @@ a{
     width: 10%;
     height: 12vh;
 }
-#logo>img{
+#logo>a>img{
     padding-left:10%;
     width: 100%;
     height: 100%;
@@ -54,9 +55,7 @@ a{
 .botNav>ul>li>a:hover{
     color: #217257;
 }
-.botNav>ul:last-child{
-   
-}
+
 #signUp>a{
     color: white;
     background-color: #1aa176;
@@ -115,7 +114,7 @@ input[type="number"]{
     padding:0% 3%;
     padding-bottom: 3%;
 }
-#textpart>div>button{
+#textpart>div>a>button{
     margin: 0% 10%;
     padding: 9px 20px;
     border: 2px solid #217257;
@@ -155,6 +154,14 @@ form~p>a{
     text-align: center;
     /* margin-top: 2%; */
 }
+.topMidSection>h1{
+    padding: 0% 5%;
+    font-size: 3rem;
+    font-family:'Favoritfreshly',sans-serif;
+    text-align: left;
+    padding-top: 6%;
+    text-align: center;
+}
 .topMidSection>div{
     width: 90%;
     margin: auto;
@@ -188,6 +195,7 @@ form~p>a{
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 #menuImages{
     width: 95%;
     margin: auto;
@@ -275,6 +283,18 @@ form~p>a{
     margin: auto;
     margin-bottom: 1%;
 }
+.plansection>h1{
+    padding: 0% 5%;
+    font-size: 3rem;
+    font-family:'Favoritfreshly',sans-serif;
+    text-align: left;
+    padding-top: 1%;
+    text-align: center;
+}
+.plansection>img{
+    width: 5%;
+    margin-top: 3%;
+}
 .plansection>button{
     padding:10px;
     color: white;
@@ -286,32 +306,48 @@ form~p>a{
     border: none; 
 }
 /* --------------------------icons ------------------------------ */
-.review>h1{
+.review{
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+}
+.review>h2{
     text-align: center;
     font-size: 3rem;
     font-family:'Favoritfreshly',sans-serif;
     margin-top: 8%;
 }
-#iconsDiv{
-    width: 100%;
+.review-container{
+    /* padding: 0 10vw; */
     display: flex;
-    justify-content: space-evenly;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.review-container ::-webkit-scrollbar {
+    display: none;
+}
+.content{
+    flex: 0 0 auto;
+    width: 30%;
+    /* height: 450px; */
+    justify-content: space-between;
+    margin:14px;
+}
+.icons{
+    color: yellow;
+    font-size: 25px;
     text-align: center;
 }
-#iconsDiv>div{
-    width: 25%;
-    margin-top: 3%;
+.review-comments{
+    text-align: center;
+    padding: 1rem;
 }
-#icons{
-    color: #FDCC0D;
-}
-#iconsDiv>div>h6{
-    font-size: 22px;
-    font-weight: normal;
-    margin: 10px;
-}
-#iconsDiv>div>p{
-    font-size: 14px;
+.review-comments>h6{
+    font-size: 1.5rem;
+    overflow: hidden;
+    padding: 1rem 0px;
 }
 /* -----------------info---------------- */
 
@@ -406,3 +442,30 @@ input[type="number"]{
 .topfooter>a>img{
 width: 100%;
 }
+.footerbtm{
+    padding-top: 5%;
+    height: 50vh;
+    width: 80%;
+    margin:auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.footerbtm>a>img{
+    height: 30vh;
+}
+.footerbtm>div>ul>li{
+    list-style: none;
+    padding: 5px 0px;
+}
+.footerbtm>div>ul>li>a:hover{
+    color: #1aa176;
+    cursor: pointer;
+}
+.footerbtm>div>a:hover{
+    color: #1aa176;
+    cursor: pointer;
+}
+input[type="submit"],button,a{
+    cursor: pointer;
+}
+
