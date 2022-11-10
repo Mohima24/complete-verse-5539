@@ -1,25 +1,34 @@
 
-document.querySelector('.popup').innerHTML="";
+async function fetchfun(){
+    try{
+        let url = await fetch("https://636aaa04b10125b78fe1d6ca.mockapi.io/Foods")
+        let data = await url.json()
+        displayDiv(data)
+    }catch(err){
+        alert(err)
+    }
+}
+fetchfun()
 function displayDiv(data) {
-    for (let i = 0; i <= 5; i++) {
+    data.forEach(element => {
         let div = document.createElement('div')
         document.getElementById('menuImages').append(div)
         div.addEventListener('click',function(){
             document.querySelector('.popup').style.display="flex"
-            displayPopup(data[i])
+            displayPopup(element)
         })
 
         let imgDiv = document.createElement('div')
 
         let image = document.createElement('img')
-        image.src = data[i].image;
+        image.src = element.image;
         imgDiv.append(image)
 
         let name = document.createElement('h3')
-        name.innerText = data[i].name;
+        name.innerText = element.name;
 
         let cal = document.createElement('p')
-        cal.innerText = `${data[i].cal} Cal`;
+        cal.innerText = `${element.cal} Cal`;
 
         let text = document.createElement('p')
         text.innerText = "Gluten Free";
@@ -28,29 +37,10 @@ function displayDiv(data) {
         serve.innerText = "Single-Serve";
 
         div.append(imgDiv, name, cal, text, serve)
-    }
+    });
 }
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
-    anchor.addEventListener('click',function(e){
-        e.preventDefault()
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior:"smooth"
-        })
-    })
-})
-
-document.querySelector('form').addEventListener('submit',function(event){
-event.preventDefault()
-window.location.replace("plan.html")
-})
-document.querySelectorAll('input[type="number"]').forEach(input=>{
-    input.oninput = ()=> {
-        if(input.value.length>input.maxLength) input.value = input.value.slice(0,input.maxLength);
-    }
-})
-
 function displayPopup(element){
+    document.querySelector(".popup").innerHTML=""
     let div1 = document.createElement('div')
     div1.classList.add("popup-content")
 
@@ -60,7 +50,6 @@ function displayPopup(element){
     let icons= document.createElement('img')
     icons.src="https://cdn.pixabay.com/photo/2012/04/13/00/22/red-31226_1280.png"
     icons.addEventListener('click',function(){
-        document.querySelector('.popup').innerHTMl=""
         document.querySelector('.popup').style.display="none"
     })
 
@@ -83,10 +72,10 @@ function displayPopup(element){
     popupimg.classList.add("popup-img")
 
     let image1= document.createElement('img')
-    image1.src= element.img;
+    image1.src= element.image;
 
     let image2= document.createElement('img')
-    image2.src= "none"
+    image2.src= element.sideimg
 
     let des = document.createElement('div')
     des.classList.add("description")
@@ -107,14 +96,3 @@ function displayPopup(element){
     div1.append(icons,popnav,popupimg)
     document.querySelector('.popup').append(div1)
 }
-
-async function fetchfun(){
-    try{
-        let url = await fetch("https://636aaa04b10125b78fe1d6ca.mockapi.io/Foods")
-        let data = await url.json()
-        displayDiv(data)
-    }catch(err){
-        alert(err)
-    }
-}
-fetchfun()
