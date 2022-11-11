@@ -75,7 +75,7 @@ function displayPopup(element){
     image1.src= element.image;
 
     let image2= document.createElement('img')
-    image2.src= element.sideimg
+    image2.src= element.sideimg;
 
     let des = document.createElement('div')
     des.classList.add("description")
@@ -86,12 +86,9 @@ function displayPopup(element){
     let descp = document.createElement('p')
     descp.innerText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
-    let addbtn= document.createElement('button')
-    addbtn.innerText="Add to cart"
-
     des.append(desh3,descp)
     
-    popupimg.append(image1,image2,des,addbtn)
+    popupimg.append(image1,image2,des)
     
     div1.append(icons,popnav,popupimg)
     document.querySelector('.popup').append(div1)
