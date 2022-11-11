@@ -318,9 +318,10 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 .popup-content>img{
     width: 4%;
     position: sticky;
+    top: 0;
     right: 6px;
     font-size: 20px;
-    filter: grayscale(10);
+    filter: grayscale(10)
 }
 
 /* -------------------------plan section--------------------------------- */

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="customerD.css">
+</head>
+<body>
+    <div class="checkout">
+        <h1>Check Out</h1>
+        <form>
+            <label>First Name</label>
+            <input type="text" id="Fname">
+            <label>Last Name</label>
+            <input type="text" id="Lname">
+            <label>Full Address</label>
+            <input type="text" id="Address">
+            <label>city</label>
+            <input type="text" id="city">
+            <label>State</label>
+            <input type="text" id="state">
+            <label>Zip</label>
+            <!--------- append---- -->
+            <label>Phone</label>
+            <input type="number" maxlength="10">
+            <label>Email</label>
+            <!----------- append --------->
+            <hr>
+            <div>
+                Total: <span></span>
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+    <div class="orderSummery">
+        <h1>Order Summary</h1>
+        <div>
+            <p>+Add Promo Code</p>
+            <!-- <input type="number" id="promo_code">
+                <button>Apply</button> -->
+            <div>
+                 <!--append option  -->
+            </div>
+            <div>
+                <p><span>0</span> meals</p>
+                <p>amount</p>
+            </div>
+            <div>
+                <p>Discount Total : <span>0</span></p>
+                <p>SubTotal : <span>0</span></p>
+            </div>
+            <div>
+                <p>Shipping cost : $ <span>11.99</span></p>
+            </div>
+            <div>Total : <span>0</span></div>
+        </div>
+    </div>
+</body>
+</html>

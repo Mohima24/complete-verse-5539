@@ -1,11 +1,13 @@
 
 document.querySelector('.popup').innerHTML="";
 function displayDiv(data) {
+    document.querySelector('.popup').innerHTML="";
     for (let i = 0; i <= 5; i++) {
         let div = document.createElement('div')
         document.getElementById('menuImages').append(div)
         div.addEventListener('click',function(){
-            document.querySelector('.popup').style.display="flex"
+            console.log("hello");
+            document.querySelector('.popup').style.display="block"
             displayPopup(data[i])
         })
 
@@ -39,18 +41,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
         })
     })
 })
-
+let arr=[]
 document.querySelector('form').addEventListener('submit',function(event){
 event.preventDefault()
-window.location.replace("plan.html")
+let obj={
+    email:email.value,
+    zip:zip.value,
+}
+arr.push(obj)
+localStorage.setItem('derails',JSON.stringify(arr))
+window.location.replace("meals.html")
 })
 document.querySelectorAll('input[type="number"]').forEach(input=>{
     input.oninput = ()=> {
         if(input.value.length>input.maxLength) input.value = input.value.slice(0,input.maxLength);
     }
 })
-
 function displayPopup(element){
+    console.log(element);
     let div1 = document.createElement('div')
     div1.classList.add("popup-content")
 
@@ -60,8 +68,9 @@ function displayPopup(element){
     let icons= document.createElement('img')
     icons.src="https://cdn.pixabay.com/photo/2012/04/13/00/22/red-31226_1280.png"
     icons.addEventListener('click',function(){
-        document.querySelector('.popup').innerHTMl=""
         document.querySelector('.popup').style.display="none"
+        console.log("abc")
+        document.querySelector('.popup').innerHTMl=""
     })
 
     let navh2 = document.createElement('h2')
@@ -83,10 +92,10 @@ function displayPopup(element){
     popupimg.classList.add("popup-img")
 
     let image1= document.createElement('img')
-    image1.src= element.img;
+    image1.src= element.image;
 
     let image2= document.createElement('img')
-    image2.src= "none"
+    image2.src= element.sideimg;
 
     let des = document.createElement('div')
     des.classList.add("description")
@@ -97,14 +106,12 @@ function displayPopup(element){
     let descp = document.createElement('p')
     descp.innerText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
-    let addbtn= document.createElement('button')
-    addbtn.innerText="Add to cart"
-
     des.append(desh3,descp)
     
-    popupimg.append(image1,image2,des,addbtn)
+    popupimg.append(image1,image2,des)
     
     div1.append(icons,popnav,popupimg)
+    document.querySelector('.popup').innerHTMl=""
     document.querySelector('.popup').append(div1)
 }
 
