@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    background-image: url("https://res.cloudinary.com/freshly/image/upload/c_crop,g_auto,dpr_auto,q_30,w_1500,h_900/v1494958610/joinnow-southchicken.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    height: 100vh;
+    }
+    div{
+        width: 30%;
+        background-color: rgba(255, 255, 255, 0.619);
+        margin: auto;
+        height: 30vh;
+        text-align: center;
+        padding-top: 4%;
+    }
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"]
+    {
+        width: 80%;
+        padding: 10px;
+        margin:auto;
+        box-sizing: border-box;
+        border: none;
+        margin-top: 5%;
+        color:#217257;
+        /* margin: 5%; */
+    }
+    input[type="submit"]{
+        background-color: #217257;
+        color: white;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <form>
+            <input type="email" id="email" placeholder="Enter email">
+            <input type="password" id="password" placeholder="Enter Password">
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    let finalDetails = JSON.parse(localStorage.getItem('final-details')) || [] ;
+    let form = document.querySelector('form')
+    let arr2=[]
+    // let x;
+    // console.log(finalDetails)
+    form.addEventListener('submit',function(event){
+        event.preventDefault();
+
+        let obj={
+            email:email.value,
+            password: password.value,
+        }
+        let flag=false
+        finalDetails.forEach(element => {
+            if(element.email==obj.email && element.password==obj.password){
+                arr2.push(element)
+                localStorage.setItem('arr2',JSON.stringify(arr2))
+                return flag=true;
+            }
+        });
+
+        if(flag==true){
+            alert("log in succesfully")
+            window.location.replace('meals2.html')
+        }else{
+            alert("Wrong credential or You don't have any account")
+        }
+    })
+
+</script>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background-image: url("https://res.cloudinary.com/freshly/image/upload/c_crop,g_auto,dpr_auto,q_30,w_1500,h_900/v1494958610/joinnow-southchicken.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        height: 100vh;
+    }
+    div{
+        width: 60%;
+        background-color: rgba(255, 255, 255, 0.619);
+        margin: auto;
+        height: 40vh;
+        text-align: center;
+    }
+    input[type="number"],
+    input[type="submit"],
+    input[type="email"]{
+        padding: 13px;
+        margin:auto;
+        box-sizing: border-box;
+        border: none;
+        color:#217257;
+    }
+    input[type="submit"]{
+        background-color: #217257;
+        color: white;
+        cursor: pointer;
+    }
+    form{
+        width: 80%;
+        display: flex;
+        margin: auto;
+        margin-top: 4%;
+        justify-content: center;
+        grid-template-columns: repeat(4,1fr);
+    }
+    #email{
+        width: 48%;
+    }
+    #zip{
+        width: 23%;
+    }
+    #submit{
+        width: 23%;
+    }
+    h1,h2{
+        width: 80%;
+        margin: auto;
+        text-align: left;
+        font-size: 2rem;
+        font-family:'Favoritfreshly',sans-serif;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Dinner's ready!</h1>
+        <h2>Chef-prepared, healthy meals delivered weekly</h2>
+        <form>
+            <input type="email" id="email" placeholder="Enter email">
+            <input type="number" id="zip" placeholder="Enter Zip Code" maxlength=5>
+            <input type="submit" id="submit">
+        </form>
+        <p>Already have an account? <a href="login.html"> Log in</a></p>
+    </div>
+</body>
+</html>
+<script>
+
+
+let finalDetails = JSON.parse(localStorage.getItem('final-details')) || [] 
+
+document.querySelector('form').addEventListener('submit',function(event){
+event.preventDefault()
+let obj={
+    email:email.value,
+    zip:zip.value,
+}
+let find = finalDetails.find(el=>{
+    if(el.email==obj.email){
+        return true
+    }
+})
+if(!find==true){
+    arr.push(obj)
+    localStorage.setItem('derails',JSON.stringify(arr))
+    window.location.replace("meals.html")
+}else{
+    alert("Already you have an account")
+}
+
+})
+document.querySelectorAll('input[type="number"]').forEach(input=>{
+    input.oninput = ()=> {
+        if(input.value.length>input.maxLength) input.value = input.value.slice(0,input.maxLength);
+    }
+})
+</script>

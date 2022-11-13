@@ -1,4 +1,221 @@
-async function fetchfun(){
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="meals.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    display: flex;
+}
+.meals-product{
+    width: 75%;
+}
+nav{
+    width: 100%;
+    margin: auto;
+    position: sticky;
+    top:0;
+    z-index: 2;
+}
+.navbar{
+    display: flex;
+    height: 8vh;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    padding: 0 10px;
+}
+.botnav{
+    background-color: bisque;
+}
+.topNav{
+    background-color: white;
+}
+/* ----------------products----------------- */
+#products{
+    width: 93%;
+    height: 90vh;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    margin: 24px auto;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+#products>div{
+    width: 23%;
+    height: 50vh;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    flex: 0 0 auto;
+    /* padding-bottom: 2%; */
+}
+#products>div>img{
+    width: 100%;
+    /* height:100%; */
+    transition: 2s;
+}
+#products>div:hover img{
+    transform:scale(1.1);
+}
+#btn{
+    visibility: visible;
+    position: absolute;
+    right: 10px;
+    font-size: 2rem;
+    border-radius: 25px;
+    padding: 7px 15px;
+    border: none;
+    background-color: #217257;
+    color: white;
+}
+.flex{
+    background-color: white;
+}
+.addtocart-sec{
+    width: 24%;
+}
+#btn-div{
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+    font-size: 20px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding:5px 10px;
+    border-radius: 15px;
+}
+#btn-div>p{
+    display: inline;
+    padding: 0 3px;
+}
+#meals{
+    width: 100%;
+    /* height: 90vh; */
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+#meals>div{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    flex: 0 0 auto;
+}
+#meals>div>img{
+    width: 25%;
+}
+#meals>div>h3{
+    font-size: 16px;
+}
+#meals>div>div{
+    font-size: 2rem;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+.total{
+    height: 20vh;
+    width: 24%;
+    margin: auto;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    text-align: center;
+    padding-top: 2%;
+}
+.totalCart{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.totalCart>p{
+    display: inline;
+    padding-right: 10%;
+    padding-left: 2%;
+}
+#Next{
+    width: 90%;
+    margin: auto;
+    background-color: rgba(128, 128, 128, 0.459);
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: not-allowed;
+}
+.flex>p:last-child{
+    visibility: visible;
+    background-color: #217257;
+    border-radius: 10px;
+    padding: 8px 12px;
+    color: white;
+}
+#cart-icon>span{
+    color: #217257;
+    font-size: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="meals-product">
+        <nav>
+            <div class="topNav navbar">
+                <a href="index.html">Back</a>
+                <div id="Date"></div>
+                <p>Customer Support</p>
+            </div>
+            <div class="botnav navbar">
+                <p>Choose meals</p>
+                <p>Sort & Filters</p>
+            </div>
+        </nav>
+        <div id="products">
+        <!---------------------append-------------- -->
+        </div>
+    </div>
+    <div class="addtocart-sec">
+            <nav>
+                <div class="navbar flex">
+                    <p>My delivery for : <span>abc</span></p>
+                    <p id="clearcart">Clear all</p>
+                </div>
+                <hr>
+            </nav>
+            <div id="meals">
+                <!-- append here -->
+            </div>
+        <div class="total">
+            <div class="totalCart">
+                <p>Subtotal $ <span id="total-cost">0</span></p>
+                <i id="cart-icon" class="fa-solid fa-cart-shopping"> <span>0</span></i>
+            </div>
+            <button id="Next">Add <span>4</span> to continue</button>
+            <p>The more you add, the more you save!</p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+    let arr2=JSON.parse(localStorage.getItem('arr2'))
+    console.log(arr2)
+    async function fetchfun(){
     try{
         let url = await fetch("https://636aaa04b10125b78fe1d6ca.mockapi.io/Foods")
         let data = await url.json()
@@ -60,7 +277,7 @@ function displayDiv(data) {
                 document.getElementById('Next').style.cursor="pointer"
                 document.getElementById('Next').style.backgroundColor="#217257";
                 document.getElementById('Next').addEventListener('click',function(){
-                    window.location.replace("customerD.html")
+                    window.location.replace("customerD2.html")
                 })             
             }
         })
@@ -116,7 +333,7 @@ function displayDiv(data) {
                 document.getElementById('Next').style.cursor="pointer";
                 document.getElementById('Next').style.backgroundColor="#217257";
                 document.getElementById('Next').addEventListener('click',function(){
-                window.location.replace('file:///C:/Users/hp/OneDrive/Desktop/complete-verse-5539/Food_panda_project/customerD.html')
+                window.location.replace('file:///C:/Users/hp/OneDrive/Desktop/complete-verse-5539/Food_panda_project/customerD2.html')
                 })
             }
         })
@@ -189,3 +406,5 @@ itemCount.innerText= JSON.parse(localStorage.getItem('countTotal'))||0;
 let totaCost = document.querySelector('#total-cost')
 totaCost.innerText=JSON.parse(localStorage.getItem('count-total')) || 0;
 
+
+</script>
