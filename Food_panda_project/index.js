@@ -1,4 +1,5 @@
 
+// -----------------------------Display function------------------------
 document.querySelector('.popup').innerHTML="";
 function displayDiv(data) {
     document.querySelector('.popup').innerHTML="";
@@ -32,7 +33,10 @@ function displayDiv(data) {
         div.append(imgDiv, name, cal, text, serve)
     }
 }
+// ------------------------------Display function-----------------------------
 
+
+// -------------------------redirecting same page------------------------------------
 document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
     anchor.addEventListener('click',function(e){
         e.preventDefault()
@@ -41,22 +45,40 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
         })
     })
 })
-let arr=[]
+
+// ------------------------store details ---------------------------------
+let finalDetails = JSON.parse(localStorage.getItem('final-details')) || [] ;
+let arr=[];
+
 document.querySelector('form').addEventListener('submit',function(event){
 event.preventDefault()
 let obj={
     email:email.value,
     zip:zip.value,
 }
-arr.push(obj)
-localStorage.setItem('derails',JSON.stringify(arr))
-window.location.replace("meals.html")
+let find = finalDetails.find(el=>{
+    if(el.email==obj.email){
+        return true
+    }
+})
+if(!find==true){
+    arr.push(obj)
+    localStorage.setItem('derails',JSON.stringify(arr))
+    window.location.replace("meals.html")
+}else{
+    alert("Already you have an account")
+}
+
 })
 document.querySelectorAll('input[type="number"]').forEach(input=>{
     input.oninput = ()=> {
         if(input.value.length>input.maxLength) input.value = input.value.slice(0,input.maxLength);
     }
 })
+
+// ----------------------------------------------end store data ----------------------------
+
+// ------------------------- start pop-up function --------------------------
 function displayPopup(element){
     console.log(element);
     let div1 = document.createElement('div')
@@ -69,7 +91,6 @@ function displayPopup(element){
     icons.src="https://cdn.pixabay.com/photo/2012/04/13/00/22/red-31226_1280.png"
     icons.addEventListener('click',function(){
         document.querySelector('.popup').style.display="none"
-        console.log("abc")
         document.querySelector('.popup').innerHTMl=""
     })
 
@@ -115,6 +136,7 @@ function displayPopup(element){
     document.querySelector('.popup').append(div1)
 }
 
+// -----------------------------pop up function end ---------------------------------
 async function fetchfun(){
     try{
         let url = await fetch("https://636aaa04b10125b78fe1d6ca.mockapi.io/Foods")

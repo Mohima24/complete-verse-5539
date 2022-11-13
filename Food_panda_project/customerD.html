@@ -10,52 +10,56 @@
 <body>
     <div class="checkout">
         <h1>Check Out</h1>
-        <form>
+        <form id="details-form">
             <label>First Name</label>
-            <input type="text" id="Fname">
+            <input type="text" id="Fname" required>
             <label>Last Name</label>
-            <input type="text" id="Lname">
+            <input type="text" id="Lname" required>
             <label>Full Address</label>
-            <input type="text" id="Address">
+            <input type="text" id="Address" required>
             <label>city</label>
-            <input type="text" id="city">
+            <input type="text" id="city" required>
             <label>State</label>
-            <input type="text" id="state">
+            <input type="text" id="state" required>
             <label>Zip</label>
-            <!--------- append---- -->
+            <input type="number" id="appendzip" disabled required>
             <label>Phone</label>
-            <input type="number" maxlength="10">
+            <input type="number" maxlength="10" required id="phone">
             <label>Email</label>
-            <!----------- append --------->
+            <input type="email" id="email">
             <hr>
             <div>
-                Total: <span></span>
+                Total: $<span id="pay-total">0</span>
             </div>
             <input type="submit">
         </form>
     </div>
+    <hr>
     <div class="orderSummery">
         <h1>Order Summary</h1>
         <div>
-            <p>+Add Promo Code</p>
-            <!-- <input type="number" id="promo_code">
-                <button>Apply</button> -->
+            <p id="promocode">+Add Promo Code</p>
+            <input type="text" id="promo_code" class="codeinput">
+                <button class="codeinput" id="apply">Apply</button>
             <div>
                  <!--append option  -->
             </div>
+            <hr>
             <div>
-                <p><span>0</span> meals</p>
-                <p>amount</p>
+                <p><span id="items">0</span> meals : $<span id="amount">0</span></p>
             </div>
+            <hr>
             <div>
-                <p>Discount Total : <span>0</span></p>
-                <p>SubTotal : <span>0</span></p>
+                <p>Discount Total : $<span id="dicount">0</span></p>
             </div>
+            <hr>
             <div>
-                <p>Shipping cost : $ <span>11.99</span></p>
+                <p>Shipping cost : $ <span>9.9</span></p>
             </div>
-            <div>Total : <span>0</span></div>
+            <hr>
+            <div>Total : $<span id="total_bill">0</span></div>
         </div>
     </div>
 </body>
 </html>
+<script src="customerD.js"></script>

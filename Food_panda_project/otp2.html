@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    background-image: url("https://res.cloudinary.com/freshly/image/upload/c_crop,g_auto,dpr_auto,q_30,w_1500,h_900/v1494958610/joinnow-southchicken.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    height: 100vh;
+    }
+    div{
+        width: 30%;
+        background-color: rgba(255, 255, 255, 0.619);
+        margin: auto;
+        height: 30vh;
+        text-align: center;
+        padding-top: 4%;
+    }
+    input[type="number"],
+    input[type="submit"]
+    {
+        width: 80%;
+        padding: 10px;
+        margin:auto;
+        box-sizing: border-box;
+        border: none;
+        margin-top: 5%;
+        color:#217257;
+        /* margin: 5%; */
+    }
+    input[type="submit"]{
+        background-color: #217257;
+        color: white;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <form>
+            <input type="number" id="otp" placeholder="Enter OTP" maxlength="5">
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    let finalDetails = JSON.parse(localStorage.getItem('final-details')) || [] ;
+    let product_data= JSON.parse(localStorage.getItem('add-data')) || []
+
+    let count =JSON.parse(localStorage.getItem('countTotal')) || 0 ;
+    let foodValue= JSON.parse(localStorage.getItem('count-total')) || 0 ;
+
+    document.querySelector('form').addEventListener('submit',function(event){
+        event.preventDefault()
+        if(otp.value==12345){
+            alert('Payment Successfully');
+            window.location.replace("index.html");
+            count=0;
+            foodValue=0
+            product_data=[]
+            localStorage.setItem('add-data',JSON.stringify(product_data))
+            localStorage.setItem('countTotal',count)
+            localStorage.setItem('count-total',foodValue)             
+        }else{
+            alert("Sorry, Wrong OTP")
+        }
+    })
+    document.querySelectorAll('input[type="number"]').forEach(input=>{
+        input.oninput = ()=> {
+            if(input.value.length>input.maxLength) input.value = input.value.slice(0,input.maxLength);
+        }
+    })
+</script>

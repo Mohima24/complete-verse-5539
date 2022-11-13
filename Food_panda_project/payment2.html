@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+    .container{
+        width: 30%;
+        margin:6% auto;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 5%;
+    }
+    #card_number{
+        width: 100%;
+    }
+    #card_number>input[type="number"]{
+        width: 18%;
+        margin-right:10px;
+        text-align: center;
+        padding: 8px 0px;
+    }
+    input[type="submit"]{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0.7rem 1.5rem;
+        background: #34495e;
+        color: white;
+        border: none;
+        outline: none;
+        margin-top: 1rem;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover{
+        background: #2c3e50;
+    }
+    #flex{
+        display: flex;
+	    margin-top: 1rem;
+    }
+    #flex input[type="month"]{
+        padding: 0.5rem 0.7rem;
+        margin-left: 5px;
+        margin-top: 10px;
+    }
+    #flex input[type="number"]{
+        padding: 0.5rem 0.7rem;
+	    margin-left: 5px;
+        margin-top: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>PAYMENT</h3>
+        <form>
+            Accepted Card <br>
+            <img src="./logo/card1.png" width="100">
+            <img src="./logo/card2.png" width="50">
+            <br><br>
+
+            <div id="card_number">
+                <label>Card Number</label> <br>
+                    <input type="number" maxlength="4" pattern="0-9" required placeholder="####" id="one">
+                    <input type="number" maxlength="4" pattern="0-9" required placeholder="####" id="two">
+                    <input type="number" maxlength="4" pattern="0-9" required placeholder="####" id="three">
+                    <input type="number" maxlength="4" pattern="0-9" required placeholder="####" id="four">
+            </div>
+            <div id="flex">
+                <div>
+                    <label>Expire Month</label>
+                    <input type="month" id="exp" required>
+                </div>
+                <div>
+                    <label>CVV</label>
+                    <input type="number" name="" placeholder="CVV" id="cvv" maxlength="3" required>
+                </div>
+            </div>
+            <input type="submit" name="" value="Proceed to Checkout">
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelectorAll('input[type="number"]').forEach(input=>{
+        input.oninput = ()=> {
+            if(input.value.length>input.maxLength) input.value = input.value.slice(0,input.maxLength);
+        }
+    })
+
+    let expmonth = document.getElementById('exp');
+    let date = new Date();
+    let month = "0" + (date.getMonth() + 1);
+    expmonth.value = (date.getFullYear() + "-" + (month.slice(-2)))
+
+    document.querySelector('form').addEventListener('submit',function(event){
+        event.preventDefault()
+        if(one.value=="1234" && two.value=="5555" && three.value=="8982" && four.value=="1111" && exp.value=="2023-01" && cvv.value==234){
+            window.location.replace("otp2.html")
+        }else{
+            alert("Wrong Payment Details , please fill this form carefully")
+        }
+    })
+</script>
